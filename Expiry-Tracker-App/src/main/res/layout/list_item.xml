@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/meat_layout"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/ic_launcher_background"/>
+
+    <TextView
+        android:id="@+id/item_title_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/item_img"
+        android:text="Title"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/expiry_title_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/item_img"
+        android:text="Days until expired: "
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/status_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="STATUS"
+        android:textSize="15sp" />
+
+
+</RelativeLayout>
