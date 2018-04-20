@@ -40,7 +40,6 @@ public class AddOrEditActivity extends AppCompatActivity {
         cancel_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("~~~Test", "cancel button pressed");
                 finish();
             }
         });
@@ -48,7 +47,6 @@ public class AddOrEditActivity extends AppCompatActivity {
         remove_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("~~~", "remove button pressed");
             }
         });
         save_or_add_btn = findViewById(R.id.save_or_add_btn);
@@ -56,7 +54,6 @@ public class AddOrEditActivity extends AppCompatActivity {
         intent = getIntent();
         item = (Item)intent.getSerializableExtra("Item");
         if (item != null) {
-            Log.i("~~~", "Item is not null");
             entry_title_txt.setText(item.getTitle());
             item_img.setImageResource(item.getImageID());
             save_or_add_btn.setText("Save");

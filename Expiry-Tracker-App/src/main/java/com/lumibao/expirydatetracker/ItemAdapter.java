@@ -34,10 +34,8 @@ public class ItemAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        Log.i("~~~Test","test");
         return itemList.get(position);
     }
-    //sss
 
     @Override
     public long getItemId(int position) {
@@ -64,7 +62,6 @@ public class ItemAdapter extends BaseAdapter {
         // Update expiry title
         expiry_title_txt.setText("Days until expired: " + Integer.toString(daysUntilExpired));
         // Update status
-        Log.i("~~~days", Integer.toString(daysUntilExpired));
         if (daysUntilExpired < 0) {
             status_txt.setText("EXPIRED");
             status_txt.setTextColor(Color.RED);

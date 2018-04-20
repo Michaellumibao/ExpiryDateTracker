@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Expiry-Tracker-App/app.iml" filepath="$PROJECT_DIR$/Expiry-Tracker-App/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Expiry-Tracker-App/Expiry-Tracker-App.iml" filepath="$PROJECT_DIR$/Expiry-Tracker-App/Expiry-Tracker-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/ExpiryDateTracker.iml" filepath="$PROJECT_DIR$/ExpiryDateTracker.iml" />
+      <module fileurl="file://C:\Projects\ExpiryDateTracker\Expiry-Tracker-App\app.iml" filepath="C:\Projects\ExpiryDateTracker\Expiry-Tracker-App\app.iml" />
     </modules>
   </component>
 </project>
