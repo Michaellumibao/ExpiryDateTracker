@@ -3,7 +3,9 @@ package com.lumibao.expirydatetracker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -49,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, AddOrEditActivity.class);
                 intent.putExtra("Item", itemList.get(position));
-                startActivity(intent);
+                intent.putExtra("Index", position);
+                startActivityForResult(intent,0);
             }
         });
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -62,6 +65,35 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, AddOrEditActivity.class));
             }
         });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+
+        if (resultCode == 0) {
+            // Item is saved
+
+        }
+        else if (resultCode ==  1) {
+            // result code 1 = removed
+            int index = data.getIntExtra("Index", -1);
+            if (index != -1) {
+                itemList.remove(index);
+                itemAdapter.notifyDataSetChanged();
+            }
+            Log.i("~~~request code", Integer.toString(requestCode));
+            Log.i("~~~result code", Integer.toString(resultCode));
+            Log.i("~~~Intent position", Integer.toString(data.getIntExtra("Index", -1)));
+        } else if (resultCode == 3) {
+            Item item = (Item)data.getSerializableExtra("Item");
+            int index = data.getIntExtra("Index", -1);
+            if (index != -1) {
+                itemList.set(index, item);
+                itemAdapter.notifyDataSetChanged();
+            }
+        }
+
 
     }
 
