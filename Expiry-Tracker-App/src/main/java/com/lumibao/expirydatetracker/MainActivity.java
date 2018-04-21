@@ -28,19 +28,20 @@ public class MainActivity extends AppCompatActivity {
         item_list = (ListView) findViewById(R.id.item_list);
 
         itemList = new ArrayList<>();
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg", -1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg", -1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg", -1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg", -1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg", -1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leasfasfasfasfasfaasfg", -1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg", -1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg", -1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg", -1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg2", 1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg2", 1));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg3", 4));
-        itemList.add(new Item(R.drawable.chicken_leg, "Chicken Leg3", 4));
+        itemList.add(new Item(R.drawable.apple, "Apple", -1));
+        itemList.add(new Item(R.drawable.apple, "Apple", -1));
+        itemList.add(new Item(R.drawable.apple, "Apple", -1));
+        itemList.add(new Item(R.drawable.avocado, "Avocado", 0));
+        itemList.add(new Item(R.drawable.burger, "Burger", 1));
+        itemList.add(new Item(R.drawable.burger2, "Chicken Leg", 4));
+        itemList.add(new Item(R.drawable.donut, "Donute", 4));
+        itemList.add(new Item(R.drawable.egg, "Egg", 4));
+        itemList.add(new Item(R.drawable.fish, "Fish", 5));
+        itemList.add(new Item(R.drawable.pizza, "Pizza", 10));
+        itemList.add(new Item(R.drawable.pumpkin, "Pumpkins", 23));
+        itemList.add(new Item(R.drawable.watermelon, "Watermelon", 25));
+        itemList.add(new Item(R.drawable.watermelon, "Watermelon", 25));
+
 
 
         // Initiate adapter
@@ -62,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddOrEditActivity.class));
+                Intent intent = new Intent(MainActivity.this, AddOrEditActivity.class);
+                startActivityForResult(intent, 0);
             }
         });
 
@@ -85,6 +87,15 @@ public class MainActivity extends AppCompatActivity {
             Log.i("~~~request code", Integer.toString(requestCode));
             Log.i("~~~result code", Integer.toString(resultCode));
             Log.i("~~~Intent position", Integer.toString(data.getIntExtra("Index", -1)));
+        } else if (resultCode == 2) {
+            Item item = (Item)data.getSerializableExtra("Item");
+            Log.i("~~~in 2?", "huh");
+
+            if (item != null) {
+                Log.i("~~~Huh?", "huh");
+                itemList.add(item);
+                itemAdapter.notifyDataSetChanged();
+            }
         } else if (resultCode == 3) {
             Item item = (Item)data.getSerializableExtra("Item");
             int index = data.getIntExtra("Index", -1);

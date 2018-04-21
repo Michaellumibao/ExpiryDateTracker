@@ -32,6 +32,7 @@ public class AddOrEditActivity extends AppCompatActivity {
     Button cancel_btn;
     Button remove_btn;
     Button save_or_add_btn;
+    Button choose_image_btn;
 
 
     @Override
@@ -96,8 +97,9 @@ public class AddOrEditActivity extends AppCompatActivity {
                 } else {
                     if (adding) {
                         item = new Item(imageID, itemTitle, 0);
-
-                        Log.i("~~~save pressed","save pressed");
+                        intent.putExtra("Item", item);
+                        setResult(2, intent);
+                        finish();
                     } else {
                         item = new Item(imageID, itemTitle, 0);
                         intent.putExtra("Item", item);
@@ -110,7 +112,15 @@ public class AddOrEditActivity extends AppCompatActivity {
             }
         });
 
-
+        // Choose image button
+        choose_image_btn = findViewById(R.id.choose_image_btn);
+        choose_image_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageID = R.drawable.chicken_leg;
+                item_img.setImageResource(imageID);
+            }
+        });
 
         intent = getIntent();
         // -1 is used as a marker that no index was passed.
@@ -125,7 +135,6 @@ public class AddOrEditActivity extends AppCompatActivity {
             adding = false;
         } else {
             // The user is creating a new item.
-
 
             remove_btn.setVisibility(View.GONE);
             save_or_add_btn.setText("Add");

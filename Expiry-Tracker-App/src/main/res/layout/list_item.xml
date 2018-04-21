@@ -4,23 +4,24 @@
     android:id="@+id/meat_layout"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:padding="10dp">
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/item_img"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignParentLeft="true"
         android:layout_marginRight="10dp"
-        android:background="@drawable/ic_launcher_background" />
+        android:background="@drawable/circle_logo"
+        android:padding="2dp" />
 
     <TextView
         android:id="@+id/item_title_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/item_img"
-        android:text="Title"
         android:maxLines="1"
+        android:text="Title"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -39,8 +40,8 @@
         android:id="@+id/status_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:text="STATUS"
         android:textSize="15sp" />
 
