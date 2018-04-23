@@ -23,7 +23,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Cancel" />
+                    android:text="Cancel"
+                    android:textColor="#A2AD59"
+                    android:textStyle="italic" />
 
                 <Button
                     android:id="@+id/remove_btn"
@@ -75,6 +77,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
+                    android:backgroundTint="#A2AD59"
                     android:text="Choose Image..." />
 
             </RelativeLayout>
@@ -104,6 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/date_picker"
+                android:backgroundTint="#A2AD59"
                 android:text="Save / Add" />
 
         </RelativeLayout>

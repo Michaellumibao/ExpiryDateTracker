@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView item_list;
     private ItemAdapter itemAdapter;
     private List<Item> itemList;
+    private RecyclerView item_list_view;
 //    RelativeLayout[] meatItems = new RelativeLayout[5];
 
     @Override
@@ -25,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        item_list = (ListView) findViewById(R.id.item_list);
 
         itemList = new ArrayList<>();
         itemList.add(new Item(R.drawable.apple, "Apple", -1));
@@ -42,12 +44,14 @@ public class MainActivity extends AppCompatActivity {
         itemList.add(new Item(R.drawable.watermelon, "Watermelon", 25));
         itemList.add(new Item(R.drawable.watermelon, "Watermelon", 25));
 
-
+        item_list_view = (RecyclerView) findViewById(R.id.item_list_view);
+        item_list_view.setLayoutManager(new LinearLayoutManager(this));
+        item_list_view.setAdapter(new RecyclerViewAdapter(this, itemList));
 
         // Initiate adapter
         itemAdapter = new ItemAdapter(getApplicationContext(),itemList);
-        item_list.setAdapter(itemAdapter);
-        item_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//        item_list.setAdapter(itemAdapter);
+/*        item_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, AddOrEditActivity.class);
@@ -55,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("Index", position);
                 startActivityForResult(intent,0);
             }
-        });
+        });*/
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //
