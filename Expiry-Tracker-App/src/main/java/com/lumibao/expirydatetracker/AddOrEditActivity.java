@@ -39,7 +39,6 @@ public class AddOrEditActivity extends AppCompatActivity {
     Button cancel_btn;
     Button remove_btn;
     Button save_or_add_btn;
-    Button choose_image_btn;
     RecyclerView icons_list_view;
     IconsRecyclerViewAdapter iconsRecyclerViewAdapter;
 
@@ -135,16 +134,6 @@ public class AddOrEditActivity extends AppCompatActivity {
                         finish();
                     }
                 }
-            }
-        });
-
-        // Choose image button
-        choose_image_btn = findViewById(R.id.choose_image_btn);
-        choose_image_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                imageID = R.drawable.chicken_leg;
-                item_img.setImageResource(imageID);
             }
         });
 
