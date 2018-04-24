@@ -1,6 +1,7 @@
 package com.lumibao.expirydatetracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +19,8 @@ import java.util.List;
  */
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    private static ClickListener clickListener;
 
     Context context;
     List<Item> itemList;
@@ -57,12 +60,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             ((AdapterItem) holder).status_txt.setTextColor(Color.GREEN);
         }
 
-        ((AdapterItem) holder).item_parent_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 
     @Override
@@ -70,12 +67,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         return itemList.size();
     }
 
-    public class AdapterItem extends RecyclerView.ViewHolder {
+    public class AdapterItem extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView item_img;
         TextView item_title_txt;
         TextView status_txt;
         TextView expiry_title_txt;
-        RelativeLayout item_parent_layout;
 
         public AdapterItem(View itemView) {
             super(itemView);
@@ -83,7 +79,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             item_title_txt=itemView.findViewById(R.id.item_title_txt);
             status_txt=itemView.findViewById(R.id.status_txt);
             expiry_title_txt=itemView.findViewById(R.id.expiry_title_txt);
-            item_parent_layout = itemView.findViewById(R.id.item_parent_layout);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            clickListener.onItemClick(getAdapterPosition(), v);
+        }
+    }
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        RecyclerViewAdapter.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        void onItemClick(int position, View v);
     }
 }
