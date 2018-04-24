@@ -37,10 +37,36 @@ public class IconsRecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
+        final int index = position;
         ((IconAdapterItem)holder).icon_1.setImageResource(imageIdList.get(position)[0]);
         ((IconAdapterItem)holder).icon_2.setImageResource(imageIdList.get(position)[1]);
         ((IconAdapterItem)holder).icon_3.setImageResource(imageIdList.get(position)[2]);
+
+        ((IconAdapterItem)holder).icon_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (context instanceof AddOrEditActivity) {
+                    ((AddOrEditActivity)context).updateImage(imageIdList.get(index)[0]);
+                }
+            }
+        });
+        ((IconAdapterItem)holder).icon_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (context instanceof AddOrEditActivity) {
+                    ((AddOrEditActivity)context).updateImage(imageIdList.get(index)[1]);
+                }
+            }
+        });
+        ((IconAdapterItem)holder).icon_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (context instanceof AddOrEditActivity) {
+                    ((AddOrEditActivity)context).updateImage(imageIdList.get(index)[2]);
+                }
+            }
+        });
     }
 
     @Override

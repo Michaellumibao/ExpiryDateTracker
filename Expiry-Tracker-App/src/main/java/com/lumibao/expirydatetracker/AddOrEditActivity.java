@@ -167,4 +167,9 @@ public class AddOrEditActivity extends AppCompatActivity {
             adding = true;
         }
     }
+
+    public void updateImage(int imageID) {
+        this.imageID = imageID;
+        item_img.setImageResource(imageID);
+    }
 }
