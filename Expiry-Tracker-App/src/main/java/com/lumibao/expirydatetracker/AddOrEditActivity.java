@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -15,6 +16,11 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class AddOrEditActivity extends AppCompatActivity {
 
@@ -24,6 +30,7 @@ public class AddOrEditActivity extends AppCompatActivity {
     int index;
     boolean adding;
     String itemTitle;
+    List<int[]> iconsList;
 
     // AddOrEdit Views
     TextInputEditText enter_title_txt;
@@ -33,12 +40,31 @@ public class AddOrEditActivity extends AppCompatActivity {
     Button remove_btn;
     Button save_or_add_btn;
     Button choose_image_btn;
+    RecyclerView icons_list_view;
+    IconsRecyclerViewAdapter iconsRecyclerViewAdapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.lumibao.expirydatetracker.R.layout.add_or_edit_view);
+
+        //Populate icons list.
+        iconsList = new ArrayList<>();
+        iconsList.add(new int[]{R.drawable.apple, R.drawable.avocado, R.drawable.burger});
+        iconsList.add(new int[]{R.drawable.apple, R.drawable.avocado, R.drawable.burger});
+        iconsList.add(new int[]{R.drawable.apple, R.drawable.avocado, R.drawable.burger});
+        iconsList.add(new int[]{R.drawable.apple, R.drawable.avocado, R.drawable.burger});
+        iconsList.add(new int[]{R.drawable.apple, R.drawable.avocado, R.drawable.burger});
+        iconsList.add(new int[]{R.drawable.apple, R.drawable.avocado, R.drawable.burger});
+        iconsList.add(new int[]{R.drawable.apple, R.drawable.avocado, R.drawable.burger});
+        iconsList.add(new int[]{R.drawable.apple, R.drawable.avocado, R.drawable.burger});
+        iconsList.add(new int[]{R.drawable.apple, R.drawable.avocado, R.drawable.burger});
+
+        iconsRecyclerViewAdapter = new IconsRecyclerViewAdapter(this, iconsList);
+        icons_list_view = findViewById(R.id.icons_list_view);
+        icons_list_view.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        icons_list_view.setAdapter(iconsRecyclerViewAdapter);
 
         //Dismiss keyboard
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
