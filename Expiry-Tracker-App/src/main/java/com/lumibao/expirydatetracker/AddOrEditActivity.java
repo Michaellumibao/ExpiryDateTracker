@@ -19,6 +19,7 @@ import android.widget.Toast;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -115,18 +116,20 @@ public class AddOrEditActivity extends AppCompatActivity {
         save_or_add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Calendar expiryDate = Calendar.getInstance();
+                expiryDate.set(date_picker.getYear(), date_picker.getMonth(), date_picker.getDayOfMonth());
                 boolean error = false;
                 if (TextUtils.isEmpty(enter_title_txt.getText())){
                     error = true;
                     enter_title_txt.setError("Please Enter a Title...");
                 } else {
                     if (adding) {
-                        item = new Item(imageID, itemTitle, 0);
+                        item = new Item(imageID, itemTitle, expiryDate);
                         intent.putExtra("Item", item);
                         setResult(2, intent);
                         finish();
                     } else {
-                        item = new Item(imageID, itemTitle, 0);
+                        item = new Item(imageID, itemTitle, expiryDate);
                         intent.putExtra("Item", item);
                         intent.putExtra("Index", index);
                         // resultCode 3 = saved

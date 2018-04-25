@@ -29,6 +29,13 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/toolbar_background" />
+
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -41,7 +48,7 @@
         app:backgroundTint="#A2AD59"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@drawable/add_text" />
+        app:srcCompat="@drawable/add_image" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/item_list_view"
