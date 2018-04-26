@@ -18,19 +18,24 @@ public class Item implements Serializable{
     private int daysUntilExpired;
     private Calendar expiryDay;
 
+    public Calendar getExpiryDay() {
+        return expiryDay;
+    }
+
+    public void setExpiryDay(Calendar expiryDay) {
+        this.expiryDay = expiryDay;
+    }
+
     public Item(int imageID, String title, Calendar expiryDay) {
         this.imageID = imageID;
         this.title = title;
         this.expiryDay = expiryDay;
-        this.daysUntilExpired = calculateDaysUntilExpired();
-
-        long timeBetweenDates = expiryDay.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
-        Log.i("~~~Time", Double.toString(timeBetweenDates / 1000 / 60 / 60 / 24));
+        recalculateDaysUntilExpired();
     }
 
-    public int calculateDaysUntilExpired() {
-        long timeBetweenDates = expiryDay.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
-        return (int)timeBetweenDates / 1000 / 60 / 60 / 24;
+    public void recalculateDaysUntilExpired() {
+        double timeBetweenDates = expiryDay.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
+        this.daysUntilExpired = (int) Math.ceil((timeBetweenDates / 1000 / 60 / 60 / 24));
     }
 
     public int getImageID() {

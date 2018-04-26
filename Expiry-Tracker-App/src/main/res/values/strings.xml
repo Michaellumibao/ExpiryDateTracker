@@ -2,4 +2,12 @@
     <string name="app_name">Expiry Date Tracker</string>
     <string name="action_settings">Settings</string>
     <string name="PREF_FILE">SharedPreferences</string>
+    <string name="NOTIFICATIONS_FILE">SharedPreferences</string>
+    <string name="enter_item_title">Enter Item Title</string>
+    <string name="choose_item_image">Choose Item Image</string>
+    <string name="enter_expiry_date">Enter Expiry Date</string>
+    <string name="smashicons">
+        <a href="https://smashicons.com">smashicons</a></string>
+    <string name="flaticon"><a href="https://flaticon.com">www.flaticon.com</a></string>
+
 </resources>

@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -37,7 +38,6 @@ public class AddOrEditActivity extends AppCompatActivity {
     TextInputEditText enter_title_txt;
     ImageView item_img;
     DatePicker date_picker;
-    Button cancel_btn;
     Button remove_btn;
     Button save_or_add_btn;
     RecyclerView icons_list_view;
@@ -48,6 +48,10 @@ public class AddOrEditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.lumibao.expirydatetracker.R.layout.add_or_edit_view);
+
+        // Back button
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Populate icons list.
         iconsList = new ArrayList<>();
@@ -89,16 +93,6 @@ public class AddOrEditActivity extends AppCompatActivity {
         item_img = (ImageView) findViewById(R.id.item_img);
         date_picker = findViewById(R.id.date_picker);
 
-        // Cancel button
-        cancel_btn = findViewById(R.id.cancel_btn);
-        cancel_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setResult(RESULT_CANCELED);
-                finish();
-            }
-        });
-
         // Remove button
         remove_btn = findViewById(R.id.remove_btn);
         remove_btn.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +116,7 @@ public class AddOrEditActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(enter_title_txt.getText())){
                     error = true;
                     enter_title_txt.setError("Please Enter a Title...");
+                    enter_title_txt.requestFocus();
                 } else {
                     if (adding) {
                         item = new Item(imageID, itemTitle, expiryDate);
@@ -151,6 +146,8 @@ public class AddOrEditActivity extends AppCompatActivity {
             item_img.setImageResource(imageID);
             save_or_add_btn.setText("Save");
             adding = false;
+            date_picker.init(item.getExpiryDay().get(Calendar.YEAR), item.getExpiryDay().get(Calendar.MONTH),
+                    item.getExpiryDay().get(Calendar.DATE),null);
         } else {
             // The user is creating a new item.
 
@@ -163,5 +160,17 @@ public class AddOrEditActivity extends AppCompatActivity {
     public void updateImage(int imageID) {
         this.imageID = imageID;
         item_img.setImageResource(imageID);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            setResult(RESULT_CANCELED);
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

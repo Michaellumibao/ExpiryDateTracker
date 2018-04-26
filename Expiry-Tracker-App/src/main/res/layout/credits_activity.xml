@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/credits_background">
+
+    <TextView
+        android:id="@+id/credits_description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Icons made by smashicons from www.flaticon.com"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/smashicon_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/credits_description_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="@string/smashicons"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/flaticon_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/smashicon_txt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/flaticon"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
