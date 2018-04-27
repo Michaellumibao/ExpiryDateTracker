@@ -27,9 +27,10 @@ import java.util.List;
 public class NotificationReciever extends BroadcastReceiver{
 
     List<Item> itemList;
+    Context context;
     @Override
     public void onReceive(Context context, Intent intent) {
-
+        this.context = context;
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         Intent repeatingIntent = new Intent(context, MainActivity.class);
@@ -51,7 +52,6 @@ public class NotificationReciever extends BroadcastReceiver{
         // Expired notification
         NotificationItem expiredNotification = getExpired();
         if (expiredNotification != null) {
-            Log.i("~~~~", "making notifiactions");
             Notification notificationBuilder = new Notification.Builder(context)
                     .setContentIntent(pendingIntent)
                     .setSmallIcon(R.mipmap.app_icon_round)
@@ -66,7 +66,6 @@ public class NotificationReciever extends BroadcastReceiver{
         // Expires tomorrow notification
         NotificationItem expiresTomorrowNotification = getExpiresTomorrow();
         if (expiresTomorrowNotification != null) {
-            Log.i("~~~~", "making notifiactions");
             Notification notificationBuilder = new Notification.Builder(context)
                     .setContentIntent(pendingIntent)
                     .setSmallIcon(R.mipmap.app_icon_round)
@@ -81,7 +80,6 @@ public class NotificationReciever extends BroadcastReceiver{
         // Expire notification
         NotificationItem expiresSoonNotification = getExpiresSoon();
         if (expiresSoonNotification != null) {
-            Log.i("~~~~", "making notifiactions");
             Notification notificationBuilder = new Notification.Builder(context)
                     .setContentIntent(pendingIntent)
                     .setSmallIcon(R.mipmap.app_icon_round)
@@ -118,14 +116,12 @@ public class NotificationReciever extends BroadcastReceiver{
         int expiredImage = 0;
 
         if (itemList != null) {
-            Log.i("~~~~", "itemList is not null");
             for (Item item : itemList) {
-                Log.i("~~~", item.getTitle());
-                Log.i("~~~", Integer.toString(item.getDaysUntilExpired()));
                 if (item.getDaysUntilExpired() < 0) {
                     numberExpired++;
                     expiredItems.add(item.getTitle());
-                    expiredImage = item.getImageID();
+                    expiredImage = context.getResources().getIdentifier(item.getImageName(),"drawable",
+                            "com.lumibao.expirydatetracker");
                 }
             }
         }
@@ -154,7 +150,6 @@ public class NotificationReciever extends BroadcastReceiver{
             }
         }
 
-        Log.i("~~~~", "didn't return null");
         return new NotificationItem(expiredTitle, expiredMessage, numberExpired,expiredImage);
     }
 
@@ -170,7 +165,8 @@ public class NotificationReciever extends BroadcastReceiver{
             if (item.getDaysUntilExpired() == 0) {
                 numberExpired++;
                 expiredItems.add(item.getTitle());
-                expiredImage = item.getImageID();
+                expiredImage = context.getResources().getIdentifier(item.getImageName(),"drawable",
+                        "com.lumibao.expirydatetracker");
             }
         }
 
@@ -212,7 +208,8 @@ public class NotificationReciever extends BroadcastReceiver{
             if (item.getDaysUntilExpired() == 2) {
                 numberExpired++;
                 expiredItems.add(item.getTitle());
-                expiredImage = item.getImageID();
+                expiredImage = context.getResources().getIdentifier(item.getImageName(),"drawable",
+                        "com.lumibao.expirydatetracker");
             }
         }
 

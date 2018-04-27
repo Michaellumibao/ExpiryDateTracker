@@ -9,5 +9,6 @@
     <string name="smashicons">
         <a href="https://smashicons.com">smashicons</a></string>
     <string name="flaticon"><a href="https://flaticon.com">www.flaticon.com</a></string>
+    <string name="packagename">com.lumibao.expirydatetracker</string>
 
 </resources>

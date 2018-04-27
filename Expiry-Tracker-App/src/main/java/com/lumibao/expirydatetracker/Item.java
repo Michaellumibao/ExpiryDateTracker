@@ -11,7 +11,7 @@ import java.util.Calendar;
  */
 
 public class Item implements Serializable{
-    private int imageID;
+    private String imageName;
     private String title;
     private String status;
     private String expiryText;
@@ -26,8 +26,8 @@ public class Item implements Serializable{
         this.expiryDay = expiryDay;
     }
 
-    public Item(int imageID, String title, Calendar expiryDay) {
-        this.imageID = imageID;
+    public Item(String imageName, String title, Calendar expiryDay) {
+        this.imageName = imageName;
         this.title = title;
         this.expiryDay = expiryDay;
         recalculateDaysUntilExpired();
@@ -38,12 +38,12 @@ public class Item implements Serializable{
         this.daysUntilExpired = (int) Math.ceil((timeBetweenDates / 1000 / 60 / 60 / 24));
     }
 
-    public int getImageID() {
-        return imageID;
+    public String getImageName() {
+        return imageName;
     }
 
-    public void setImageID(int imageID) {
-        this.imageID = imageID;
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 
     public String getTitle() {
@@ -60,5 +60,9 @@ public class Item implements Serializable{
 
     public void setDaysUntilExpired(int daysUntilExpired) {
         this.daysUntilExpired = daysUntilExpired;
+    }
+
+    public int compareTo(Item other) {
+        return this.title.compareTo(other.getTitle());
     }
 }

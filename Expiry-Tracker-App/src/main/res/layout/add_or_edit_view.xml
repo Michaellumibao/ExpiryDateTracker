@@ -61,19 +61,83 @@
             android:textStyle="bold"
             android:layout_marginLeft="20dp"/>
 
+        <LinearLayout
+            android:id="@+id/icon_tab_layout"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/choose_image_label"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/meat_btn"
+                style="@android:style/Widget.ImageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/steak2" />
+
+            <ImageButton
+                android:id="@+id/fruit_btn"
+                style="@android:style/Widget.ImageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/apple" />
+
+            <ImageButton
+                android:id="@+id/grain_btn"
+                style="@android:style/Widget.ImageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/bread_1" />
+
+            <ImageButton
+                android:id="@+id/dairy_btn"
+                style="@android:style/Widget.ImageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/cheese" />
+
+            <ImageButton
+                android:id="@+id/misc_btn"
+                style="@android:style/Widget.ImageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                app:srcCompat="@mipmap/app_icon" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:src="@drawable/divider_layout"
+            android:layout_marginLeft="50dp" />
         <RelativeLayout
             android:id="@+id/image_picker_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
             android:padding="10dp">
 
             <ImageView
                 android:id="@+id/item_img"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="TODO"
-                app:srcCompat="@mipmap/ic_launcher_round" />
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/circle_logo"
+                android:contentDescription="TODO" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/icons_list_view"

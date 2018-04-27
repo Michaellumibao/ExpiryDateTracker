@@ -1,6 +1,9 @@
 package com.lumibao.expirydatetracker;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Icon;
 import android.media.Image;
 import android.support.annotation.NonNull;
@@ -20,11 +23,11 @@ import java.util.List;
 public class IconsRecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
-    List<int[]> imageIdList;
+    List<String[]> imageNameList;
 
-    public IconsRecyclerViewAdapter(Context context, List<int[]> imageIdList){
+    public IconsRecyclerViewAdapter(Context context, List<String[]> imageNameList){
         this.context = context;
-        this.imageIdList = imageIdList;
+        this.imageNameList = imageNameList;
     }
 
     @NonNull
@@ -39,15 +42,23 @@ public class IconsRecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerView
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         final int index = position;
-        ((IconAdapterItem)holder).icon_1.setImageResource(imageIdList.get(position)[0]);
-        ((IconAdapterItem)holder).icon_2.setImageResource(imageIdList.get(position)[1]);
-        ((IconAdapterItem)holder).icon_3.setImageResource(imageIdList.get(position)[2]);
+
+
+        ((IconAdapterItem)holder).icon_1.setImageBitmap(decodeSampledBitmapFromResource(context.getResources(), context.getResources()
+                .getIdentifier(imageNameList.get(position)[0], "drawable",
+                        "com.lumibao.expirydatetracker"), 200,200));
+        ((IconAdapterItem)holder).icon_2.setImageBitmap(decodeSampledBitmapFromResource(context.getResources(), context.getResources()
+                .getIdentifier(imageNameList.get(position)[1], "drawable",
+                        "com.lumibao.expirydatetracker"), 200,200));
+        ((IconAdapterItem)holder).icon_3.setImageBitmap(decodeSampledBitmapFromResource(context.getResources(), context.getResources()
+                .getIdentifier(imageNameList.get(position)[2], "drawable",
+                        "com.lumibao.expirydatetracker"), 200,200));
 
         ((IconAdapterItem)holder).icon_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (context instanceof AddOrEditActivity) {
-                    ((AddOrEditActivity)context).updateImage(imageIdList.get(index)[0]);
+                    ((AddOrEditActivity)context).updateImage(imageNameList.get(index)[0]);
                 }
             }
         });
@@ -55,7 +66,7 @@ public class IconsRecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerView
             @Override
             public void onClick(View v) {
                 if (context instanceof AddOrEditActivity) {
-                    ((AddOrEditActivity)context).updateImage(imageIdList.get(index)[1]);
+                    ((AddOrEditActivity)context).updateImage(imageNameList.get(index)[1]);
                 }
             }
         });
@@ -63,7 +74,7 @@ public class IconsRecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerView
             @Override
             public void onClick(View v) {
                 if (context instanceof AddOrEditActivity) {
-                    ((AddOrEditActivity)context).updateImage(imageIdList.get(index)[2]);
+                    ((AddOrEditActivity)context).updateImage(imageNameList.get(index)[2]);
                 }
             }
         });
@@ -71,7 +82,7 @@ public class IconsRecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerView
 
     @Override
     public int getItemCount() {
-        return imageIdList.size();
+        return imageNameList.size();
     }
 
     public class IconAdapterItem extends RecyclerView.ViewHolder {
@@ -84,5 +95,45 @@ public class IconsRecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerView
             icon_2 = itemView.findViewById(R.id.icon_2);
             icon_3 = itemView.findViewById(R.id.icon_3);
         }
+    }
+
+    // Reduce image sizes to be loaded in memory.
+    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+                                                         int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(res, resId, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeResource(res, resId, options);
+    }
+
+    public static int calculateInSampleSize(
+            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+
+            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            // height and width larger than the requested height and width.
+            while ((halfHeight / inSampleSize) >= reqHeight
+                    && (halfWidth / inSampleSize) >= reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+
+        return inSampleSize;
     }
 }

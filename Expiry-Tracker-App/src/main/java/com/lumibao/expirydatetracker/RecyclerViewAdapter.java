@@ -42,7 +42,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Item item = itemList.get(position);
-        ((AdapterItem) holder).item_img.setImageResource(item.getImageID());
+        ((AdapterItem) holder).item_img.setImageResource(context.getResources().getIdentifier(item.getImageName(),"drawable",
+                "com.lumibao.expirydatetracker"));
         ((AdapterItem) holder).item_title_txt.setText(item.getTitle());
 
         // Update expiry title

@@ -24,7 +24,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@android:color/background_dark"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColorLink="@android:color/background_dark"/>
 
     <TextView
         android:id="@+id/flaticon_txt"
@@ -35,7 +36,9 @@
         android:layout_marginTop="30dp"
         android:text="@string/flaticon"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@android:color/background_dark"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColorLink="@android:color/background_dark"/>
 
 </RelativeLayout>

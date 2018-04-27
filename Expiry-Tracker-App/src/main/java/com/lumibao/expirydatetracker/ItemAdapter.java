@@ -1,6 +1,7 @@
 package com.lumibao.expirydatetracker;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
@@ -54,7 +55,9 @@ public class ItemAdapter extends BaseAdapter {
         TextView expiry_title_txt = (TextView) v.findViewById(R.id.expiry_title_txt);
 
         // Update image
-        item_img.setImageResource(itemList.get(i).getImageID());
+        Resources resources = mContext.getResources();
+        int imageID = resources.getIdentifier(itemList.get(i).getImageName(), "drawable", "com.lumibao.expirydatetracker");
+        item_img.setImageResource(imageID);
         // Update title
         item_title_txt.setText(itemList.get(i).getTitle());
         // Save days until expired

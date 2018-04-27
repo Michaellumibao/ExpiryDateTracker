@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -27,12 +28,13 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private Context context;
-    private ListView item_list;
     private List<Item> itemList;
     private RecyclerView item_list_view;
     private RecyclerViewAdapter itemAdapter;
@@ -50,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
         // LOAD DATA
         loadData();
 
+
+
         for (Item item: itemList) {
             item.recalculateDaysUntilExpired();
         }
 
-        Log.i("~~~allow", Boolean.toString(allowNotifications));
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -75,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,0);
             }
         });
+
+        sortByExpiryDate();
         // Initiate adapter
         //itemAdapter = new ItemAdapter(getApplicationContext(),itemList);
 //        item_list.setAdapter(itemAdapter);
@@ -99,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
     @Override
@@ -115,15 +121,10 @@ public class MainActivity extends AppCompatActivity {
                 itemList.remove(index);
                 itemAdapter.notifyDataSetChanged();
             }
-            Log.i("~~~request code", Integer.toString(requestCode));
-            Log.i("~~~result code", Integer.toString(resultCode));
-            Log.i("~~~Intent position", Integer.toString(data.getIntExtra("Index", -1)));
         } else if (resultCode == 2) {
             Item item = (Item)data.getSerializableExtra("Item");
-            Log.i("~~~in 2?", "huh");
 
             if (item != null) {
-                Log.i("~~~Huh?", "huh");
                 itemList.add(item);
                 itemAdapter.notifyDataSetChanged();
             }
@@ -158,6 +159,11 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor notificationEditor = notificationPreferences.edit();
         notificationEditor.putBoolean("allowNotifications", allowNotifications);
         notificationEditor.apply();
+        if (allowNotifications) {
+            setNotifications();
+        } else if (!allowNotifications) {
+            disableNotifications();
+        }
     }
 
     private void loadData() {
@@ -201,7 +207,13 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_credits:
                 startActivity(new Intent(context, com.lumibao.expirydatetracker.CreditsActivity.class));
-
+                return true;
+            case R.id.sort_by_expirydate:
+                sortByExpiryDate();
+                return true;
+            case R.id.sort_by_name:
+                sortByName();
+                return true;
             default:
                 return false;
         }
@@ -210,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
     private void setNotifications() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.getInstance().YEAR, Calendar.getInstance().MONTH, Calendar.getInstance().DATE,
-                18,16, 20);
+                11,50, 20);
         Intent intent = new Intent(getApplicationContext(), NotificationReciever.class);
 
         // Store the item list as JSON file using GSON
@@ -227,6 +239,31 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
+    }
+
+    public void sortByName() {
+        Collections.sort(itemList, new Comparator<Item>() {
+            @Override
+            public int compare(Item o1, Item o2) {
+                return o1.getTitle().compareTo(o2.getTitle());
+            }
+        });
+        itemAdapter.notifyDataSetChanged();
+    }
+
+    public void sortByExpiryDate() {
+        Collections.sort(itemList, new Comparator<Item>() {
+            @Override
+            public int compare(Item o1, Item o2) {
+                if (o1.getDaysUntilExpired() == o2.getDaysUntilExpired()) {
+                    return 0;
+                } else if (o1.getDaysUntilExpired() < o2.getDaysUntilExpired()) {
+                    return -1;
+                }
+                return 1;
+            }
+        });
+        itemAdapter.notifyDataSetChanged();
     }
 }
 
