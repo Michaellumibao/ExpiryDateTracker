@@ -23,15 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0bd4280-67f0-488f-ad06-827aaa060e70" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/values/images.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/avocado.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/burger.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/burger2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/chicken_leg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/donut.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/egg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/pizza.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/pumpkin.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
@@ -40,21 +31,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/apple.png" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/apple.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/fish.png" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/fish.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/watermelon.png" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/watermelon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/AddOrEditActivity.java" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/AddOrEditActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/IconsRecyclerViewAdapter.java" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/IconsRecyclerViewAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/Item.java" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/ItemAdapter.java" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/ItemAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/MainActivity.java" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/NotificationReciever.java" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/NotificationReciever.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/RecyclerViewAdapter.java" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/RecyclerViewAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/add_or_edit_view.xml" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/add_or_edit_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/credits_activity.xml" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/credits_activity.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/menu/menu_main.xml" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/menu/menu_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/icons_view.xml" afterPath="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/icons_view.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -114,25 +94,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IconsRecyclerViewAdapter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IconsRecyclerViewAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/IconsRecyclerViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="49" column="40" lean-forward="false" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+            <state relative-caret-position="-1670">
+              <caret line="27" column="83" lean-forward="true" selection-start-line="27" selection-start-column="83" selection-end-line="27" selection-end-column="83" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_or_edit_view.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/add_or_edit_view.xml">
+      <file leaf-file-name="icons_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/icons_view.xml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="80" column="16" lean-forward="false" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+            <state relative-caret-position="74">
+              <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
               <folding />
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_or_edit_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/add_or_edit_view.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="148" column="48" lean-forward="false" selection-start-line="148" selection-start-column="48" selection-end-line="148" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
             <state />
           </provider>
         </entry>
@@ -149,11 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1639">
-              <caret line="163" column="41" lean-forward="true" selection-start-line="163" selection-start-column="41" selection-end-line="163" selection-end-column="41" />
+            <state relative-caret-position="95">
+              <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -193,19 +186,6 @@
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="credits_activity.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/credits_activity.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
@@ -2075,7 +2055,6 @@
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable/circle_logo.xml" />
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/scrolling_list.xml" />
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/build.gradle" />
-        <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/icons_view.xml" />
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/list_item.xml" />
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/nav_header_main.xml" />
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/menu/menu_main.xml" />
@@ -2091,10 +2070,11 @@
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/NotificationReciever.java" />
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/RecyclerViewAdapter.java" />
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/credits_activity.xml" />
-        <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/add_or_edit_view.xml" />
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/AddOrEditActivity.java" />
-        <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/IconsRecyclerViewAdapter.java" />
         <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/MainActivity.java" />
+        <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/add_or_edit_view.xml" />
+        <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/icons_view.xml" />
+        <option value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/IconsRecyclerViewAdapter.java" />
       </list>
     </option>
   </component>
@@ -2146,6 +2126,48 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpiryDateTracker" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Expiry-Tracker-App" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpiryDateTracker" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Expiry-Tracker-App" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpiryDateTracker" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Expiry-Tracker-App" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -2170,7 +2192,7 @@
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="project.kotlinCompiler" />
-    <property name="device.picker.selection" value="ce0916096345960103" />
+    <property name="device.picker.selection" value="Pixel_API_26" />
     <property name="last_opened_file_path" value="C:/Mappedin/android-sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/drawable" />
     <property name="VectorAssetImportPath" value="C:\" />
@@ -2268,7 +2290,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524844736327" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524852122033" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2316,7 +2338,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524844736328" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524852122033" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2478,7 +2500,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524844736329" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524852122034" />
       </method>
     </configuration>
     <configuration default="false" name="Expiry-Tracker-App" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -2527,7 +2549,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524844736329" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524852122034" />
       </method>
     </configuration>
     <list size="2">
@@ -2570,10 +2592,10 @@
     <frame x="-5" y="0" width="1929" height="1035" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44792834" sideWeight="0.5032086" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49679145" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39545456" sideWeight="0.49679145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2777,16 +2799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/icons_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/list_item.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -2923,6 +2935,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3002,22 +3015,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/add_or_edit_view.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="80" column="16" lean-forward="false" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/IconsRecyclerViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="49" column="40" lean-forward="false" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+        <state relative-caret-position="301">
+          <caret line="148" column="48" lean-forward="false" selection-start-line="148" selection-start-column="48" selection-end-line="148" selection-end-column="48" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/NotificationReciever.java">
@@ -3032,11 +3037,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1639">
-          <caret line="163" column="41" lean-forward="true" selection-start-line="163" selection-start-column="41" selection-end-line="163" selection-end-column="41" />
+        <state relative-caret-position="95">
+          <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/res/layout/icons_view.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Expiry-Tracker-App/src/main/java/com/lumibao/expirydatetracker/IconsRecyclerViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1670">
+          <caret line="27" column="83" lean-forward="true" selection-start-line="27" selection-start-column="83" selection-end-line="27" selection-end-column="83" />
+          <folding />
         </state>
       </provider>
     </entry>

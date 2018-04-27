@@ -61,12 +61,19 @@
             android:textStyle="bold"
             android:layout_marginLeft="20dp"/>
 
+        <ImageView
+            android:id="@+id/item_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_logo"
+            android:contentDescription="TODO" />
+
         <LinearLayout
             android:id="@+id/icon_tab_layout"
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_below="@+id/choose_image_label"
-            android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:orientation="horizontal">
@@ -125,25 +132,22 @@
             android:layout_width="match_parent"
             android:layout_height="15dp"
             android:src="@drawable/divider_layout"
-            android:layout_marginLeft="50dp" />
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/icons_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/item_img"
+            android:layout_weight="1"
+            android:foregroundGravity="center_horizontal"/>
+
         <RelativeLayout
             android:id="@+id/image_picker_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/item_img"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/circle_logo"
-                android:contentDescription="TODO" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/icons_list_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@id/item_img"/>
 
         </RelativeLayout>
 
