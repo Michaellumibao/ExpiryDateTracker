@@ -14,6 +14,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -104,6 +105,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Attach ItemTouchHelper for swipe to delete feature
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(createHelperCallback());
+        itemTouchHelper.attachToRecyclerView(item_list_view);
 
     }
 
@@ -111,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
 
         if (resultCode == 0) {
-            // Item is saved
 
         }
         else if (resultCode ==  1) {
@@ -136,10 +139,39 @@ public class MainActivity extends AppCompatActivity {
                 itemAdapter.notifyDataSetChanged();
             }
         }
-
-
+        sortByExpiryDate();
     }
 
+    private ItemTouchHelper.Callback createHelperCallback() {
+        ItemTouchHelper.SimpleCallback simpleCallback =
+                new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.LEFT,
+                        ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+
+                    @Override
+                    public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                        moveItem(viewHolder.getAdapterPosition(), target.getAdapterPosition());
+                        return false;
+                    }
+
+                    @Override
+                    public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                        deleteItem(viewHolder.getAdapterPosition());
+                    }
+                };
+        return simpleCallback;
+    }
+
+    private void moveItem(int oldPos, int newPos) {
+        Item item = (Item) itemList.get(oldPos);
+        itemList.remove(oldPos);
+        itemList.add(newPos, item);
+        itemAdapter.notifyItemMoved(oldPos, newPos);
+    }
+
+    private void deleteItem(final int position) {
+        itemList.remove(position);
+        itemAdapter.notifyItemRemoved(position);
+    }
     @Override
     protected void onPause() {
         super.onPause();

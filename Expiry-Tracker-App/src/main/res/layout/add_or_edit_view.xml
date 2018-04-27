@@ -125,7 +125,7 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
-                app:srcCompat="@mipmap/app_icon" />
+                app:srcCompat="@drawable/groceries" />
         </LinearLayout>
 
         <ImageView

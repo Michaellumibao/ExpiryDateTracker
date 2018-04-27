@@ -48,14 +48,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         // Update expiry title
         int daysUntilExpired = item.getDaysUntilExpired();
-        ((AdapterItem) holder).expiry_title_txt.setText("Days until expired: " + Integer.toString(daysUntilExpired));
+        if (daysUntilExpired < 0) {
+            ((AdapterItem) holder).expiry_title_txt.setText("Days expired: " + Math.abs(daysUntilExpired));
+        }
+        else if (daysUntilExpired == 0) {
+            ((AdapterItem) holder).expiry_title_txt.setText("Expires tomorrow");
+        } else if (daysUntilExpired > 0 && daysUntilExpired < 30) {
+            ((AdapterItem) holder).expiry_title_txt.setText("Days until expired: " +daysUntilExpired);
+        }else if (daysUntilExpired >= 30) {
+            ((AdapterItem) holder).expiry_title_txt.setText("Weeks until expired: " + daysUntilExpired / 7);
+        }
         // Update status
         if (daysUntilExpired < 0) {
             ((AdapterItem) holder).status_txt.setText("EXPIRED");
             ((AdapterItem) holder).status_txt.setTextColor(Color.RED);
-        } else if (daysUntilExpired >= 0 && daysUntilExpired <= 3) {
+        } else if (daysUntilExpired == 0) {
+            ((AdapterItem) holder).status_txt.setText("EAT NOW");
+            ((AdapterItem) holder).status_txt.setTextColor(0xFFFF8C00);
+        } else if (daysUntilExpired > 0 && daysUntilExpired <= 3) {
             ((AdapterItem) holder).status_txt.setText("OKAY");
-            ((AdapterItem) holder).status_txt.setTextColor(0xFFDF541E);
+            ((AdapterItem) holder).status_txt.setTextColor(0xFFFFD700);
         } else {
             ((AdapterItem) holder).status_txt.setText("GOOD");
             ((AdapterItem) holder).status_txt.setTextColor(Color.GREEN);

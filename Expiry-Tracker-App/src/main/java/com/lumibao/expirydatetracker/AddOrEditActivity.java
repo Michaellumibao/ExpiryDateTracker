@@ -42,6 +42,7 @@ public class AddOrEditActivity extends AppCompatActivity {
 
     // AddOrEdit Views
     TextInputEditText enter_title_txt;
+    TextView choose_image_txt;
     ImageView item_img;
     DatePicker date_picker;
     Button remove_btn;
@@ -122,6 +123,7 @@ public class AddOrEditActivity extends AppCompatActivity {
 
             }
         });
+        choose_image_txt = findViewById(R.id.choose_image_label);
 
         // Populate meat and highlight the button
         populateMeat();
@@ -176,7 +178,7 @@ public class AddOrEditActivity extends AppCompatActivity {
                 Calendar expiryDate = Calendar.getInstance();
                 expiryDate.set(date_picker.getYear(), date_picker.getMonth(), date_picker.getDayOfMonth());
                 boolean error = false;
-                if (TextUtils.isEmpty(enter_title_txt.getText())){
+                if (TextUtils.isEmpty(enter_title_txt.getText())) {
                     error = true;
                     enter_title_txt.setError("Please Enter a Title...");
                     enter_title_txt.requestFocus();
@@ -213,10 +215,11 @@ public class AddOrEditActivity extends AppCompatActivity {
                     item.getExpiryDay().get(Calendar.DATE),null);
         } else {
             // The user is creating a new item.
-
             remove_btn.setVisibility(View.GONE);
             save_or_add_btn.setText("Add");
             adding = true;
+            itemTitle = getResources().getResourceEntryName(R.drawable.groceries);
+            item_img.setImageResource(getResources().getIdentifier(itemTitle,"drawable", "com.lumibao.expirydatetracker"));
         }
 
     }
