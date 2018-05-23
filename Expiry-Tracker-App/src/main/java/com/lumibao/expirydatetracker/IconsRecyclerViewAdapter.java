@@ -46,13 +46,13 @@ public class IconsRecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerView
 
         ((IconAdapterItem)holder).icon_1.setImageBitmap(decodeSampledBitmapFromResource(context.getResources(), context.getResources()
                 .getIdentifier(imageNameList.get(position)[0], "drawable",
-                        "com.lumibao.expirydatetracker"), 100,100));
+                        "com.lumibao.expirydatetracker"), 50,50));
         ((IconAdapterItem)holder).icon_2.setImageBitmap(decodeSampledBitmapFromResource(context.getResources(), context.getResources()
                 .getIdentifier(imageNameList.get(position)[1], "drawable",
-                        "com.lumibao.expirydatetracker"), 100,100));
+                        "com.lumibao.expirydatetracker"), 50,50));
         ((IconAdapterItem)holder).icon_3.setImageBitmap(decodeSampledBitmapFromResource(context.getResources(), context.getResources()
                 .getIdentifier(imageNameList.get(position)[2], "drawable",
-                        "com.lumibao.expirydatetracker"), 100,100));
+                        "com.lumibao.expirydatetracker"), 50,50));
 
         ((IconAdapterItem)holder).icon_1.setOnClickListener(new View.OnClickListener() {
             @Override

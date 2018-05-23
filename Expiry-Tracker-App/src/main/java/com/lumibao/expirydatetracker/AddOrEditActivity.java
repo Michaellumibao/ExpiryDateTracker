@@ -218,8 +218,8 @@ public class AddOrEditActivity extends AppCompatActivity {
             remove_btn.setVisibility(View.GONE);
             save_or_add_btn.setText("Add");
             adding = true;
-            itemTitle = getResources().getResourceEntryName(R.drawable.groceries);
-            item_img.setImageResource(getResources().getIdentifier(itemTitle,"drawable", "com.lumibao.expirydatetracker"));
+            imageName = getResources().getResourceEntryName(R.drawable.groceries);
+            item_img.setImageResource(getResources().getIdentifier(imageName,"drawable", "com.lumibao.expirydatetracker"));
         }
 
     }

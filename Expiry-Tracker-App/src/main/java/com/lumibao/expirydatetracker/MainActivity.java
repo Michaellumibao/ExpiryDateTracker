@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Flag for notifications
     private boolean allowNotifications;
+    private boolean notificationsSet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -190,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences notificationPreferences = getSharedPreferences("notification preferences", Context.MODE_PRIVATE);
         SharedPreferences.Editor notificationEditor = notificationPreferences.edit();
         notificationEditor.putBoolean("allowNotifications", allowNotifications);
+        notificationEditor.putBoolean("notificationsSet", notificationsSet);
         notificationEditor.apply();
         if (allowNotifications) {
             setNotifications();
@@ -211,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences notificationPreferences = getSharedPreferences("notification preferences", Context.MODE_PRIVATE);
         allowNotifications = notificationPreferences.getBoolean("allowNotifications", true);
+        notificationsSet = notificationPreferences.getBoolean("notificationsSet", false);
     }
 
     @Override
@@ -252,18 +255,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setNotifications() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.getInstance().YEAR, Calendar.getInstance().MONTH, Calendar.getInstance().DATE,
-                11,50, 20);
-        Intent intent = new Intent(getApplicationContext(), NotificationReciever.class);
+        if (!notificationsSet) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.getInstance().YEAR, Calendar.getInstance().MONTH, Calendar.getInstance().DATE,
+                    1, 30, 00);
+            Intent intent = new Intent(getApplicationContext(), NotificationReciever.class);
 
-        // Store the item list as JSON file using GSON
-        Gson gson = new Gson();
-        String json = gson.toJson(itemList);
-        intent.putExtra("itemList", json);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY, pendingIntent);
+            // Store the item list as JSON file using GSON
+            Gson gson = new Gson();
+            String json = gson.toJson(itemList);
+            intent.putExtra("itemList", json);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+            notificationsSet = true;
+        }
     }
 
     private void disableNotifications() {
@@ -271,6 +277,7 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
+        notificationsSet = false;
     }
 
     public void sortByName() {
